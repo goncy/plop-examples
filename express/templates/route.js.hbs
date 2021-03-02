@@ -1,0 +1,13 @@
+const express = require("express")
+
+{{#each methods}}
+const {{this}} = require("./{{this}}")
+{{/each}}
+
+const router = express.Router({ mergeParams: true })
+
+{{#each methods}}
+router.route("/").{{this}}({{this}})
+{{/each}}
+
+module.exports = router

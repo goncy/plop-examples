@@ -1,0 +1,17 @@
+<template>
+  {{name}}
+</template>
+
+{{#if script}}
+<script>
+  export default {
+    name: "{{name}}"
+  }
+</script>
+{{/if}}
+
+{{#if style}}
+<style lang="{{lang}}">
+  #{{name}} {}
+</style>
+{{/if}}
